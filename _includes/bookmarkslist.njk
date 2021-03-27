@@ -1,5 +1,5 @@
 <ol reversed class="bookmarkslist" style="counter-reset: start-from {{ (bookmarkslistCounter or bookmarkslist.length) + 1 }}">
-{% for post in bookmarkslist | reverse %}
+{% for bookmarks in bookmarkslist | reverse %}
   <li class="bookmarks-item{% if bookmark.url == url %} bookmarklist-item-active{% endif %}">
     <a href="{{ bookmarks.url | url }}" class="bookmarkslist-link">{% if bookmarks.data.title %}{{ bookmarks.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
     <time class="bookmarkslist-date" datetime="{{ bookmarks.date | htmlDateString }}">{{ bookmarks.date | readableDate }}</time>
