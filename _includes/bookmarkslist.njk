@@ -1,0 +1,12 @@
+<ol reversed class="bookmarkslist" style="counter-reset: start-from {{ (bookmarkslistCounter or bookmarkslist.length) + 1 }}">
+{% for post in bookmarkslist | reverse %}
+  <li class="bookmarks-item{% if bookmark.url == url %} bookmarklist-item-active{% endif %}">
+    <a href="{{ bookmark.url | url }}" class="bookmarklist-link">{% if bookmark.data.title %}{{ bookmark.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+    <time class="bookmarklist-date" datetime="{{ bookmark.date | htmlDateString }}">{{ bookmark.date | readableDate }}</time>
+    {% for tag in bookmark.data.tags | filterTagList %}
+      {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+      <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+    {% endfor %}
+  </li>
+{% endfor %}
+</ol>
