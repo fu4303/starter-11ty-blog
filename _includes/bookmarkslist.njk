@@ -2,7 +2,7 @@
 {% for post in bookmarkslist | reverse %}
   <li class="bookmarks-item{% if bookmark.url == url %} bookmarklist-item-active{% endif %}">
     <a href="{{ bookmarks.url | url }}" class="bookmarkslist-link">{% if bookmarks.data.title %}{{ bookmarks.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-    <time class="bookmarklist-date" datetime="{{ bookmark.date | htmlDateString }}">{{ bookmark.date | readableDate }}</time>
+    <time class="bookmarkslist-date" datetime="{{ bookmarks.date | htmlDateString }}">{{ bookmarks.date | readableDate }}</time>
     {% for tag in bookmarks.data.tags | filterTagList %}
       {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
       <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
