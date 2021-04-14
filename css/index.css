@@ -6,6 +6,7 @@
   --navy: #17050F;
   --blue: #082840;
   --white: #fff;
+  --midindigo: #A5B4FC;
 }
 
 /* Global stylesheet */
@@ -46,7 +47,7 @@ main :first-child {
   margin-top: 0;
 }
 header {
-  border-bottom: 1px dashed var(--indigo);
+  border-bottom: 1px dashed var(--midindigo);
 }
 header:after {
   content: "";
