@@ -150,6 +150,18 @@ code {
   text-decoration: underline;
 }
 
+/* Hero */
+
+
+  
+/* Footer */
+
+.footer {
+  padding: 0;
+  list style: none;
+  float: center;
+}
+
 /* Posts list */
 .postlist {
   list-style: none;
